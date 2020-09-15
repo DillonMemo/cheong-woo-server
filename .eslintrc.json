@@ -1,0 +1,38 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": ["plugin:@typescript-eslint/recommended"],
+  "ignorePatterns": ["src/index.ts"],
+  "rules": {
+    "no-console": "off",
+    "no-debugger": "off",
+    "no-unreachable": "error",
+    "jsx-quotes": ["error", "prefer-double"],
+    "eqeqeq": ["error", "always"],
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/unbound-method": "off",
+    "@typescript-eslint/require-await": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": ["off"], // 함수 반환 값과 인수에 대한 명시 적 유형은 모든 호출 코드에서 모듈 경계의 입력 및 출력 x
+        "sort-imports": [
+          "error",
+          {
+            "ignoreDeclarationSort": true,
+            "ignoreCase": true
+          }
+        ]
+      }
+    }
+  ]
+}
